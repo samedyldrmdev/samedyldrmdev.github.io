@@ -2,44 +2,89 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { faTwitter, faLinkedin, faBehance, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faTwitter,
+  faLinkedin,
+  faBehance,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Sofia_Sans_Extra_Condensed } from "next/font/google";
+import { useEffect, useState } from "react";
 
-const links = [
-  { name: "Home", href: "/" , icon: {faTwitter}},
-  { name: "About", href: "/about", icon: {faTwitter} },
-  { name: "Certificates & Courses", href: "/courses", icon: {faTwitter} },
-  { name: "Projects", href: "/projects", icon: {faTwitter} },
-  { name: "Skills", href: "/skills", icon: {faTwitter} },
-  { name: "Contact", href: "/contact", icon: {faTwitter} },
-];
+const sofiaextra = Sofia_Sans_Extra_Condensed({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
-export default function Navbar() {
-  const pathname = usePathname();
+export default function Navbar({ sections }) {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const [activeSection, setActiveSection] = useState("/");
+
+  useEffect(() => {
+    console.log(activeSection, "değişti.")
+  
+  }, [activeSection])
+
+  const handleNavLinkClick = (id) => {
+    scrollToSection(id);
+    setActiveSection(id);
+
+    
+    
+  };
+
+  
+  
+
+
 
   return (
-    <nav className="absolute w-full top-0 left-0 py-6 bg-gray-800 text-white">
+    <nav className="fixed w-full top-0 py-4 left-0 bg-gray-800 text-white z-100">
       <div className="mx-auto px-16 flex justify-between items-center">
         <div className="flex items-center">
-          <Link href={"/"}>
-            samed<span className="font-bold">yıldırım</span>
+          <Image
+            className="w-10"
+            src={"/images/sylogo.png"}
+            width={100}
+            height={100}
+            alt="Lyn Tech Digital"
+          ></Image>
+
+          <Link className={sofiaextra.className} href={"/"}>
+            <h1 className="text-3xl pl-4">
+              samed<span className="font-bold text-amber-400">yıldırım</span>
+            </h1>
           </Link>
         </div>
         <div className="space-x-12 flex flex-row">
-          {links.map((link) => {
+          {sections.map((section) => {
             return (
-                
-              <Link
-                href={link.href}
-                className={clsx("hover:text-red-300 max-w-max", {
-                  "text-sky-300": pathname === link.href,
-                })}
-              >
-                <FontAwesomeIcon icon={link.icon} />
-                {link.name}
-              </Link>
+              <ul>
+                <li
+                  key={section.id}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavLinkClick(section.id);
+                  }}
+                  className={clsx(
+                    "hover:text-red-300 max-w-max cursor-pointer",
+                    {
+                      "text-sky-300": activeSection === section.id,
+                    },
+                    
+                  )}
+                >
+                  {section.name}
+                </li>
+              </ul>
             );
           })}
 

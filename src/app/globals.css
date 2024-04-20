@@ -34,5 +34,13 @@ body {
 } */
 
 body{
-  background-color: rgb(235, 235, 235);
+  background-color: #ebebeb;
+  scroll-behavior: smooth;
 }
+
+@layer components {
+  .fade-in {
+    animation: fadeIn 1s ease-in;
+  }
+}
+
