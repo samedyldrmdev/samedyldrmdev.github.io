@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 export default function About({id}) {
-    return <div className="flex flex-row justify-start gap-10 items-center h-screen bg-gray-800 text-white p-40">
+    return <div className="flex flex-row justify-center gap-10 items-center h-screen bg-gray-800 text-white p-40">
         <Image
             className="w-96 rounded-full grayscale hover:grayscale-0"
             src={"/images/pp.jpg"}

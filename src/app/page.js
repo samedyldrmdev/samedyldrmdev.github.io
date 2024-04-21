@@ -23,7 +23,7 @@ export default function Home() {
             />
           </div>
           <div className="flex flex-col justify-end">
-            <h1 className="text-7xl font-semibold">samed yıldırım</h1>
+            <h1 className="text-7xl font-semibold">SAMED YILDIRIM</h1>
             <p className="py-4">
               Someone striving to leave my mark in the digital world. I'm here
               to share my passion for design and creative energy!
@@ -35,7 +35,7 @@ export default function Home() {
               width={1080}
             />
 
-            <ul className="list-decimal">
+            {/* <ul className="list-decimal">
               <h1 className="font-bold text-red-400 mt-10">YAPILACAKLAR</h1>
               <li>SCROLL BAR RENGİNİ STİLİNİ DEĞİŞTİR</li>
               <li>SAYFA AŞAĞI KAYDIKÇA NAVBARI GÜNCELLEME</li>
@@ -45,8 +45,9 @@ export default function Home() {
               <li className="text-blue-500">NAVBAR HOVER ANİMASYONUNU DEĞİŞTİR!</li>
               <li className="text-blue-500">FOOTER DÜZENLE.</li>
               <p className="bg-gray-800 text-white">FOOTER BACKGROUND BEYAZ OLABİLİR.</p>
-              <li className="text-blue-500">CODING...</li>
-            </ul>
+              <li className="text-blue-500">ABOUT DÜZENLEME ÖNERİLERİ</li>
+              <p className="bg-gray-800 text-white">BİLİNEN DİLLER VS VS. BUNLARI GRAFİKSEL GÖSTER.</p>
+            </ul> */}
 
             <iframe className=" absolute bottom-5 right-32 w-12" src="https://lottie.host/embed/0907640f-2208-4397-b983-661532f8fa96/0u7qaLq1hL.json"></iframe>
             <div className="mouse"></div>

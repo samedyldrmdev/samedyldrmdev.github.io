@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Sofia_Sans_Extra_Condensed } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const sofiaextra = Sofia_Sans_Extra_Condensed({
   subsets: ["latin"],
@@ -28,26 +28,13 @@ export default function Navbar({ sections }) {
 
   const [activeSection, setActiveSection] = useState("/");
 
-  useEffect(() => {
-    console.log(activeSection, "değişti.")
-  
-  }, [activeSection])
-
   const handleNavLinkClick = (id) => {
     scrollToSection(id);
     setActiveSection(id);
-
-    
-    
   };
 
-  
-  
-
-
-
   return (
-    <nav className="fixed w-full top-0 py-4 left-0 bg-gray-800 text-white z-100">
+    <nav className="fixed w-full top-0 py-4 left-0 bg-gray-800 text-white z-50">
       <div className="mx-auto px-16 flex justify-between items-center">
         <div className="flex items-center">
           <Image
@@ -78,8 +65,7 @@ export default function Navbar({ sections }) {
                     "hover:text-red-300 max-w-max cursor-pointer",
                     {
                       "text-sky-300": activeSection === section.id,
-                    },
-                    
+                    }
                   )}
                 >
                   {section.name}

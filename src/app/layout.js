@@ -9,6 +9,7 @@ import {
   Wavefont,
   Moirai_One,
   Roboto,
+  Oswald
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar";
@@ -26,6 +27,7 @@ const greatvibes = Great_Vibes({ subsets: ["latin"], weight: ["400"] });
 const linefont = Linefont({ subsets: ["latin"], weight: ["400"] });
 const moiraione = Moirai_One({ subsets: ["latin"], weight: ["400"] });
 const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
+const oswald = Oswald({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata = {
   title: "Samed YILDIRIM",
@@ -50,7 +52,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={oswald.className}>
         <Navbar sections={sections} />
         <Social />
         <div className="flex justify-center items-center">

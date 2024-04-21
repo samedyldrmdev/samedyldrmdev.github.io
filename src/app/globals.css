@@ -44,3 +44,20 @@ body{
   }
 }
 
+html {
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 0.7rem;
+  background-color: #1f2937;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 2rem;
+  background-color: white;
+}
+
