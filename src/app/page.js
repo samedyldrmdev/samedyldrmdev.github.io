@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <div
-        id="/"
+        // id="/"
         className="flex justify-center items-center h-screen px-40 ml-14"
       >
         <div className="grid grid-cols-2">
