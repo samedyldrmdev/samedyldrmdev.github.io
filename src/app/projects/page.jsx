@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Projects({id}) {
+export default function Projects() {
   const links = [
     {
       name: "WortKarte(CSS - Javascript)",
@@ -45,23 +45,40 @@ export default function Projects({id}) {
   ];
 
   return (
-    <div className="flex justify-center flex-col items-center p-24 px-56 bg-gray-800 ">
-      <h1>Projects</h1>
-      <div className="grid grid-cols-2 gap-9">
-      {/*  */}
+    <div className="p-24 px-56 bg-background-dark">
+      <div className="">
         {links.map((link) => {
           return (
             <Link href={link.url}>
-              <div className="bg-[#dfe0e2] h-[40rem] text-black rounded-2xl shadow-md shadow-black">
-                <h1 className="font-bold p-4">{link.name}</h1>
-                <Image
-                  className="w-full"
-                  src={link.image}
-                  height={1920}
-                  width={1080}
-                ></Image>
-                <h3 className="p-4">{link.description}</h3>
+              <div className="">
+                <div className="group  [perspective:1000px] w-full">
+                  <div className="grid grid-cols-2 p-3">
+                  <div className=" rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                    <div className="relative">
+                      <Image
+                        className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
+                        src={link.image}
+                        height={1920}
+                        width={1080}
+                      ></Image>
+                    </div>
+                    <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                      <div className="flex min-h-full flex-col items-center justify-center">
+                        <h1 className="text-3xl font-bold">{link.name}</h1>
+                        {/* <p className="text-lg">Photographer & Art</p> */}
+                        <p className="text-base">
+                          {link.description}
+                        </p>
+                        <button className="mt-2 rounded-md bg-neutral-800 py-1 px-2 text-sm hover:bg-neutral-900">
+                          Read More
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
               </div>
+
             </Link>
           );
         })}

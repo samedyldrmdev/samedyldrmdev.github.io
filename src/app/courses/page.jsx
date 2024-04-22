@@ -1,4 +1,4 @@
-export default function Courses({id}) {
+export default function Courses() {
   const courses = [
     { name: "Deep Learning - Bootcamp (Mentor)", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", org: "Global AI Hub" },
     { name: "AI Summer Camp - Bootcamp", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", org: "Global AI Hub" },

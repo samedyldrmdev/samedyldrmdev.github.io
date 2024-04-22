@@ -1,15 +1,10 @@
 // 'use client'
 
 import {
-  Inter,
+  Montserrat,
   Open_Sans,
-  Josefin_Sans,
-  Great_Vibes,
-  Linefont,
-  Wavefont,
-  Moirai_One,
-  Roboto,
-  Oswald
+  Oswald,
+  Quicksand
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar";
@@ -21,20 +16,11 @@ import "atropos/css";
 
 // Linefont, wavefont, Moirai One(başlık),
 
-const inter = Open_Sans({ subsets: ["latin"] });
-const josefin = Josefin_Sans({ subsets: ["latin"] });
-const greatvibes = Great_Vibes({ subsets: ["latin"], weight: ["400"] });
-const linefont = Linefont({ subsets: ["latin"], weight: ["400"] });
-const moiraione = Moirai_One({ subsets: ["latin"], weight: ["400"] });
-const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
-const oswald = Oswald({ subsets: ["latin"], weight: ["400"] });
+const bodyFont = Quicksand({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata = {
   title: "Samed YILDIRIM",
   description: "Samed YILDIRIM - Portfolio Website",
-  icon: {
-    icon: "/public/favicon.png",
-  },
 };
 
 const sections = [
@@ -52,7 +38,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={oswald.className}>
+      
+      <body className={bodyFont.className}>
         <Navbar sections={sections} />
         <Social />
         <div className="flex justify-center items-center">

@@ -1,5 +1,5 @@
-export default function Skills({id}) {
-    return <div id={id} className="flex justify-center flex-col items-center h-screen px-20 ml-14">
+export default function Skills() {
+    return <div className="flex justify-center flex-col items-center h-screen px-20 ml-14">
         Skills Page
            
 Software:

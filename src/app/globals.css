@@ -2,62 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background-color: #363543;
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 
 body{
-  background-color: #ebebeb;
+  background-color: #edf1fd;
   scroll-behavior: smooth;
-}
-
-@layer components {
-  .fade-in {
-    animation: fadeIn 1s ease-in;
-  }
-}
-
-html {
-  overflow-x: hidden;
-  scroll-padding-top: 9rem;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 html::-webkit-scrollbar {
   width: 0.7rem;
-  background-color: #1f2937;
+  background-color: transparent ;
 }
 
 html::-webkit-scrollbar-thumb {
-  border-radius: 2rem;
-  background-color: white;
+  border-radius: 1rem;
+  background-color: #2a2e3b;
 }
 
+.mask{
+
+  /*background-image: url('/images/mask.png');  Maske resmi */
+  -webkit-mask-image: url('/images/mask.png'); /* WebKit uyumluluğu */
+  mask-image: url('/images/mask.png'); /* Standart uyumluluk */
+  background-position: right center; /* Fotoğrafı sağa kaydır */
+}
