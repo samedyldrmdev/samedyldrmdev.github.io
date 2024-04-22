@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <Header title="/" />
       <HeaderTitle title="Home" />
-      <div className="absolute right-0 w-96 bottom-2">
+      <div className="absolute right-1 w-96 bottom-2">
       <h1 className="text-black h-96 text-3xl -rotate-90 flex justify-end items-end ">
           DESIGNER & DEVELOPER
         </h1>
@@ -53,9 +53,10 @@ export default function Home() {
             </ul>
 
             <iframe
-              className=" absolute bottom-5 right-32 w-12"
+              className=" absolute bottom-3 right-1/2 w-12"
               src="https://lottie.host/embed/0907640f-2208-4397-b983-661532f8fa96/0u7qaLq1hL.json"
-            ></iframe>
+            ><h1>
+              aşağı</h1></iframe>
             <div className="mouse"></div>
           </div>
           <div>

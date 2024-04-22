@@ -27,7 +27,7 @@ export default function Navbar({ sections }) {
   };
 
   return (
-    <nav className="fixed w-full top-0 py-4 left-0 text-white mix-blend-difference z-50">
+    <nav className="fixed w-full top-0 py-4 left-0 text-white z-50 bg-gray-800">
       <div className="mx-auto px-16 flex justify-between items-center">
         <div className="flex items-center">
           <Image
