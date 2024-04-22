@@ -71,9 +71,10 @@ export default function Navbar({ sections }) {
         <div>
           <Link className="" href={"https://www.lyntechdigital.com"}>
             <Image
+            className="w-12"
               src={"/images/lyntechlogo.png"}
-              width={50}
-              height={50}
+              width={720}
+              height={720}
               alt="Lyn Tech Digital"
             ></Image>
           </Link>

@@ -14,9 +14,10 @@ module.exports = {
       },
       colors: {
         "background" : "#edf1fd",
-        "background-dark" : "#2a2e3b"
+        "background-dark" : "#141414",
+        "gray1" : "#2a2a2a"
       }
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animated')],
 };
