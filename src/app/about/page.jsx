@@ -1,19 +1,19 @@
 import Image from "next/image";
 
 const skills = [
-  { name: "HTML", level: 10, type: "Software" },
-  { name: "CSS", level: 20, type: "Software" },
+  { name: "HTML", level: 100, type: "Software" },
+  { name: "CSS", level: 75, type: "Software" },
   { name: "Javascript", level: 30, type: "Software" },
-  { name: "Python", level: 40, type: "Software" },
+  { name: "Python", level: 60, type: "Software" },
   { name: "Numpy", level: 50, type: "Artificial Intelligence" },
-  { name: "Pandas", level: 60, type: "Artificial Intelligence" },
-  { name: "Seaborn", level: 70, type: "Artificial Intelligence" },
-  { name: "Sklearn", level: 80, type: "Artificial Intelligence" },
-  { name: "Matplotlip", level: 95, type: "Artificial Intelligence" },
-  { name: "Tensorflow", level: 95, type: "Artificial Intelligence" },
-  { name: "Keras", level: 95, type: "Artificial Intelligence" },
-  { name: "Selenium", level: 95, type: "Artificial Intelligence" },
-  { name: "Solidworks", level: 95, type: "Engineering" },
+  { name: "Pandas", level: 40, type: "Artificial Intelligence" },
+  { name: "Seaborn", level: 30, type: "Artificial Intelligence" },
+  { name: "Sklearn", level: 30, type: "Artificial Intelligence" },
+  { name: "Matplotlip", level: 30, type: "Artificial Intelligence" },
+  { name: "Tensorflow", level: 30, type: "Artificial Intelligence" },
+  { name: "Keras", level: 30, type: "Artificial Intelligence" },
+  { name: "Selenium", level: 30, type: "Artificial Intelligence" },
+  { name: "Solidworks", level: 50, type: "Engineering" },
   { name: "Autocad", level: 95, type: "Engineering" },
   { name: "Adobe Illustrator", level: 95, type: "Graphic Design" },
   { name: "Adobe Photoshop", level: 95, type: "Graphic Design" },
@@ -23,7 +23,16 @@ const skills = [
   { name: "Microsoft Word", level: 95, type: "Microsoft Office" },
   { name: "Microsoft Excel", level: 95, type: "Microsoft Office" },
   { name: "Microsoft Powerpoint", level: 95, type: "Microsoft Office" },
+  { name: "Data", level: 95, type: "Data" },
 ];
+
+const skillsByOrganization = skills.reduce((acc, skill) => {
+  if (!acc[skill.type]) {
+    acc[skill.type] = [];
+  }
+  acc[skill.type].push(skill);
+  return acc;
+}, {});
 
 export default function About() {
   return (
@@ -45,29 +54,30 @@ export default function About() {
         </p>
       </div>
 
-      <div className="grid grid-cols-4">
-        {skills.map((skill) => {
-          return (
-            <div className="p-2">
-              <h1>{skill.name}</h1>
-              <div className={`h-4 w-[10rem] rounded-full bg-white `}>
-              <div
-            className={`h-4 rounded-full ${
-              skill.type === "Software" ? "bg-blue-400" : "bg-red-400"
-            }`}
-            style={{ width: `${parseInt(skill.level) / 10}rem` }}
-          ></div>
-              </div>
+      <div className="grid grid-cols-3 gap-20">
+        {Object.keys(skillsByOrganization).map((type) => (
+          <div className="" key={type}>
+            <h1 className="font-bold p-2 text-center bg-red-500 rounded-full">
+              {type}
+            </h1>
+
+            <div className="p-2 grid grid-cols-2">
+              {skillsByOrganization[type].map((skill, index) => (
+                <div className="p-2">
+                  <h1 key={index}>{skill.name}</h1>
+                  {skill.level}
+                  <div className={`h-4 w-[100%] rounded-full bg-white `}>
+                    <div
+                      className={`h-4 rounded-full bg-blue-400`}
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
-
-// Skills Page Software:
-// HTML, CSS, Javascript, Python, Numpy, Pandas, Seaborn, Sklearn, Matplotlib, Tensorflow, Keras, Selenium
-// Engineering: Solidworks, Autocad
-
-// Graphic Design: Adobe Illustrator, Adobe Photoshop, Sony Vegas Pro, Blender, ZBbrush

@@ -72,14 +72,7 @@ export default function Courses() {
     },
   ];
 
-  //Kuruluşlara göre kursları gruplamak için bir obje oluşturun
-  const coursesByOrganization = courses.reduce((acc, course) => {
-    if (!acc[course.org]) {
-      acc[course.org] = [];
-    }
-    acc[course.org].push(course);
-    return acc;
-  }, {});
+
 
   const [visibility, setVisibility] = useState(
     new Array(courses.length).fill(false)
@@ -133,6 +126,17 @@ export default function Courses() {
     </div>
   );
 }
+
+  //Kuruluşlara göre kursları gruplamak için bir obje oluşturun
+
+  
+  // const coursesByOrganization = courses.reduce((acc, course) => {
+  //   if (!acc[course.org]) {
+  //     acc[course.org] = [];
+  //   }
+  //   acc[course.org].push(course);
+  //   return acc;
+  // }, {});
 
 /* {Object.keys(coursesByOrganization).map((orgName) => (
         <div  className="bg-slate-200" key={orgName}>
