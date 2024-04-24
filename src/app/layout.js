@@ -1,6 +1,6 @@
 "use client";
 
-import { Montserrat, Open_Sans, Oswald, Quicksand } from "next/font/google";
+import { Montserrat, Montserrat_Alternates, Open_Sans, Oswald, Quicksand, Galindo, Karantina, Nova_Script, Girassol, Mohave, Cagliostro } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar";
 import Social from "./social";
@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 // Linefont, wavefont, Moirai One(başlık),
 
-const bodyFont = Quicksand({ subsets: ["latin"], weight: ["400"] });
+const bodyFont = Cagliostro({ subsets: ["latin"], weight: ["400"] });
 
 // export const metadata = {
 //   title: "Samed YILDIRIM",
@@ -35,14 +35,13 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={bodyFont.className}>
+      <body className={`${bodyFont.className} bg-background-light`}>
         {loading ? (
           <div className="h-screen w-screen flex justify-center items-center ">
             <div className="loader"></div>
           </div>
-
-          // 
         ) : (
+          //
           <div>
             <Navbar sections={sections} />
             <Social />

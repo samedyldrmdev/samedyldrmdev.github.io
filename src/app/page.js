@@ -7,19 +7,23 @@ import Contact from "./contact/page";
 import Header from "./header";
 import HeaderTitle from "./headerTitle";
 
+import { Merriweather, Open_Sans, Oswald, Kanit, Josefin_Sans, IM_Fell_Great_Primer_SC, Karantina, Text_Me_One } from "next/font/google";
+
+const textMeOne = Text_Me_One({ subsets: ["latin"], weight: ["400"] });
+
 export default function Home() {
   return (
     <div>
       <Header title="/" />
       <HeaderTitle title="Home" />
       <div className="absolute right-1 w-96 bottom-2">
-        <h1 className="text-black h-96 text-3xl -rotate-90 flex justify-end items-end ">
+        <h1 className={`${textMeOne.className} text-black h-96 text-3xl -rotate-90 flex justify-end items-end`}>
           DESIGNER & DEVELOPER
         </h1>
       </div>
       <div className="flex justify-center flex-col items-center h-screen px-40 ml-14">
         <div className="grid grid-cols-2">
-          <div className="flex flex-col justify-end">
+          <div className={`flex flex-col justify-end`}>
             <h1 className="text-7xl font-semibold">SAMED YILDIRIM</h1>
             <p className="py-4">
               Someone striving to leave my mark in the digital world. I'm here
@@ -39,6 +43,7 @@ export default function Home() {
               <li>KENDİ SCROLL ANİMASYONUNU YAP.</li>
               <li>MOUSE SCROLL İLE BİR SAYFA İLERİ-GERİ GİT.</li>
               <li>SAĞ VEYA SOL TARAFA SAYFAYI TAKİP EDEN LINE EKLE.</li>
+              <li className="font-bold">SERTİFİKALAR SAYFASINA BAŞLIKLARI EKLE..</li>
               <li className="text-blue-500">
                 NAVBAR HOVER ANİMASYONUNU DEĞİŞTİR!
               </li>

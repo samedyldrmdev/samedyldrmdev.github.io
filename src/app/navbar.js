@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
+import { Cagliostro, Englebert, Girassol, Text_Me_One } from "next/font/google";
+
 import {
   faTwitter,
   faLinkedin,
@@ -10,6 +12,9 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
+
+const navbarFont = Englebert({ subsets: ["latin"], weight: ["400"] });
+
 
 export default function Navbar({ sections }) {
   const scrollToSection = (id) => {
@@ -27,7 +32,7 @@ export default function Navbar({ sections }) {
   };
 
   return (
-    <nav className="fixed w-full top-0 py-4 left-0 text-white z-50 bg-gray-800">
+    <nav className={`${navbarFont.className} fixed w-full top-0 py-4 left-0 text-white z-50 bg-background-dark`}>
       <div className="mx-auto px-16 flex justify-between items-center">
         <div className="flex items-center">
           <Image
@@ -40,7 +45,7 @@ export default function Navbar({ sections }) {
 
           <Link href={"/"}>
             <h1 className="text-xl pl-4 text-white">
-              samed<span className="font-medium">yıldırım</span>
+              samed<span className="font-bold text-text-light">yıldırım</span>
             </h1>
           </Link>
         </div>
@@ -55,20 +60,20 @@ export default function Navbar({ sections }) {
                     handleNavLinkClick(section.id);
                   }}
                   className={clsx(
-                    "hover:text-red-300 max-w-max cursor-pointer",
+                    "hover:animate-pulse max-w-max cursor-pointer",
                     {
-                      "text-sky-300": activeSection === section.id,
+                      "text-text-light font-bold": activeSection === section.id,
                     }
                     
                   )}
                 >
-                  {section.name.toUpperCase()}
+                  {section.name}
                 </li>
               </ul>
             );
           })}
         </div>
-        <div>
+        {/* <div>
           <Link className="" href={"https://www.lyntechdigital.com"}>
             <Image
             className="w-12"
@@ -78,7 +83,7 @@ export default function Navbar({ sections }) {
               alt="Lyn Tech Digital"
             ></Image>
           </Link>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

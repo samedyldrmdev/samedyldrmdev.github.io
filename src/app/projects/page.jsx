@@ -45,8 +45,23 @@ export default function Projects() {
   ];
 
   return (
-    <div className="bg-background-dark h-screen ">
-gsdfsdfsdfsdf
+    <div className="bg-background-dark h-screen flex justify-center items-center text-white gap-20">
+      {/* show */}
+      <div className="show w-1/2">
+        <Image
+          src={"/images/projects/weatherapp.png"}
+          height={1920}
+          width={1080}
+        ></Image>
+      </div>
+
+      {/* projects */}
+      <div className="projects">
+        <h1 className="font-bold text-2xl text-red-400 ">Projects</h1>
+        {links.map((project) => {
+          return <div className="cursor-pointer ">{project.name}</div>;
+        })}
+      </div>
     </div>
   );
 }
