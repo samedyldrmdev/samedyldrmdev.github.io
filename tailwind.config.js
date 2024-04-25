@@ -16,8 +16,9 @@ module.exports = {
         "background-dark": "#1f2833",
         "background-less-dark": "#1f2833",
         "background-light": "#feffff",
+        "dark-iki": "#252525",
         "text-dark": "#111111",
-        "text-light": "#66fcf1"
+        "text-light": "#66fcf1",
       }
     },
   },

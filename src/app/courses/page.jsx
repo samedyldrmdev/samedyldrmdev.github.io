@@ -7,6 +7,7 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import HeaderTitle from "../headerTitle";
 
 export default function Courses() {
   const courses = [
@@ -72,14 +73,22 @@ export default function Courses() {
     },
   ];
 
-
+  const coursesByOrganization = courses.reduce((acc, course) => {
+    if (!acc[course.org]) {
+      acc[course.org] = [];
+    }
+    acc[course.org].push(course);
+    return acc;
+  }, {});
 
   const [visibility, setVisibility] = useState(
-    new Array(courses.length).fill(false)
+    new Array(Object.keys(coursesByOrganization).length).fill(false)
   );
 
   const onDetails = (index) => {
-    const newVisibility = new Array(courses.length).fill(false);
+    const newVisibility = new Array(
+      Object.keys(coursesByOrganization).length
+    ).fill(false);
     if (visibility[index] === false) {
       newVisibility[index] = !newVisibility[index];
     }
@@ -87,56 +96,58 @@ export default function Courses() {
   };
 
   return (
-    <div className="flex justify-start mt-44 items-center flex-col h-screen">
-      {courses.map((course, index) => {
-        return (
-          <div
-            key={index}
-            onClick={() => {
-              onDetails(index);
-            }}
-            className="bg-[#2a2a2a] hover:bg-[#3b3b3b] hover:shadow-md justify-start hover:shadow-black text-white w-1/2 rounded-2xl cursor-pointer m-1"
-          >
-            <h1 className="font-bold text-lg p-3">
-              {course.name}{" "}
-              <FontAwesomeIcon
-                icon={visibility[index] ? faChevronRight : faChevronDown}
-              />
-            </h1>
-            <div
-              className={visibility[index] ? "visible rounded-b-2xl" : "hidden"}
-            >
-              <p className="p-2">{course.desc}</p>
-              <p className="italic p-2">
-                I received this certification from {course.org}.{" "}
-                <Link
-                  className="hover:text-red-300 font-bold"
-                  href={course.url}
-                >
-                  Click here to view the certificate.
-                </Link>
-              </p>
-              
-            </div>
-            
+    <div className="min-h-screen flex justify-center flex-col mt-4">
+      {Object.keys(coursesByOrganization).map((org) => (
+        <div className="flex justify-start items-center flex-col" key={org}>
+          <div className="bg-blue-500  justify-start w-1/2 rounded-2xl m-1">
+            <h1 className="font-bold text-lg p-3 text-white">{org}</h1>
           </div>
-        );
-      })}
-      <Link href={"/blog"} className="font-bold">TIKLA</Link>
+          {coursesByOrganization[org].map((course, index) => (
+            <div
+              key={index}
+              onClick={() => {
+                onDetails(index, org);
+              }}
+              className="bg-dark-iki hover:bg-[#3b3b3b] hover:shadow-md hover:shadow-black text-white w-1/2 rounded-2xl cursor-pointer m-1"
+            >
+              <h1 className=" text-lg p-3">
+                {course.name}{" "}
+                <FontAwesomeIcon
+                  icon={visibility[index] ? faChevronRight : faChevronDown}
+                />
+              </h1>
+              <div
+                className={
+                  visibility[index] ? "visible rounded-b-2xl" : "hidden"
+                }
+              >
+                <p className="p-2">{course.desc}</p>
+                <p className="italic p-2">
+                  I received this certification from {course.org}.{" "}
+                  <Link
+                    className="hover:text-red-300 font-bold"
+                    href={course.url}
+                  >
+                    Click here to view the certificate.
+                  </Link>
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+      {/* <HeaderTitle title="Certificates & Courses" /> */}
     </div>
   );
 }
 
-  //Kuruluşlara göre kursları gruplamak için bir obje oluşturun
-
-  
-  // const coursesByOrganization = courses.reduce((acc, course) => {
-  //   if (!acc[course.org]) {
-  //     acc[course.org] = [];
-  //   }
-  //   acc[course.org].push(course);
-  //   return acc;
-  // }, {});
+// const coursesByOrganization = courses.reduce((acc, course) => {
+//   if (!acc[course.org]) {
+//     acc[course.org] = [];
+//   }
+//   acc[course.org].push(course);
+//   return acc;
+// }, {});
 
 /* {Object.keys(coursesByOrganization).map((orgName) => (
         <div  className="bg-slate-200" key={orgName}>

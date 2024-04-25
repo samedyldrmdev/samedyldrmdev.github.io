@@ -1,0 +1,20 @@
+            {/* <ul className="list-decimal mix-blend-difference">
+              <h1 className="font-bold text-white mt-10">YAPILACAKLAR</h1>
+              <li>SCROLL BAR RENGİNİ STİLİNİ DEĞİŞTİR</li>
+              <li>SAYFA AŞAĞI KAYDIKÇA NAVBARI GÜNCELLEME</li>
+              <li>KENDİ SCROLL ANİMASYONUNU YAP.</li>
+              <li>MOUSE SCROLL İLE BİR SAYFA İLERİ-GERİ GİT.</li>
+              <li>SAĞ VEYA SOL TARAFA SAYFAYI TAKİP EDEN LINE EKLE.</li>
+              <li className="font-bold">SERTİFİKALAR SAYFASINA BAŞLIKLARI EKLE..</li>
+              <li className="">
+                NAVBAR HOVER ANİMASYONUNU DEĞİŞTİR!
+              </li>
+              <li className="">FOOTER DÜZENLE.</li>
+              <p className="bg-gray-800 text-white">
+                FOOTER BACKGROUND BEYAZ OLABİLİR.
+              </p>
+              <li className="text-blue-500">ABOUT DÜZENLEME ÖNERİLERİ</li>
+              <p className="bg-gray-800 text-white">
+                BİLİNEN DİLLER VS VS. BUNLARI GRAFİKSEL GÖSTER.
+              </p>
+            </ul> */}

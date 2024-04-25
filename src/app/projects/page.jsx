@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeaderTitle from "../headerTitle";
 
 export default function Projects() {
   const links = [
@@ -44,6 +45,7 @@ export default function Projects() {
     },
   ];
 
+
   return (
     <div className="bg-background-dark h-screen flex justify-center items-center text-white gap-20">
       {/* show */}
@@ -62,6 +64,7 @@ export default function Projects() {
           return <div className="cursor-pointer ">{project.name}</div>;
         })}
       </div>
+      {/* <HeaderTitle title="Projects" /> */}
     </div>
   );
 }

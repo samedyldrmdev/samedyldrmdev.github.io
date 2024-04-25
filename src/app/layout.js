@@ -1,12 +1,25 @@
 "use client";
 
-import { Montserrat, Montserrat_Alternates, Open_Sans, Oswald, Quicksand, Galindo, Karantina, Nova_Script, Girassol, Mohave, Cagliostro } from "next/font/google";
+import {
+  Montserrat,
+  Montserrat_Alternates,
+  Open_Sans,
+  Oswald,
+  Quicksand,
+  Galindo,
+  Karantina,
+  Nova_Script,
+  Girassol,
+  Mohave,
+  Cagliostro,
+} from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar";
 import Social from "./social";
 import Footer from "./footer";
 import "atropos/css";
 import { useState, useEffect } from "react";
+import HeaderTitle from "./headerTitle";
 
 // Linefont, wavefont, Moirai One(başlık),
 
@@ -20,9 +33,10 @@ const bodyFont = Cagliostro({ subsets: ["latin"], weight: ["400"] });
 const sections = [
   { name: "Home", id: "/" },
   { name: "About", id: "about" },
-  { name: "Certificates & Courses", id: "courses" },
-  { name: "Projects", id: "projects" },
   { name: "Skills", id: "skills" },
+
+  { name: "Projects", id: "projects" },
+  { name: "Certificates & Courses", id: "courses" },
   { name: "Contact", id: "contact" },
 ];
 
@@ -44,8 +58,9 @@ export default function RootLayout({ children }) {
           //
           <div>
             <Navbar sections={sections} />
-            <Social />
             <div className="flex justify-center items-center">{children}</div>
+            <Social />
+            
             <Footer />
           </div>
         )}

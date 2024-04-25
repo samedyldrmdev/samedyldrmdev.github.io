@@ -12,9 +12,9 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
+import HeaderTitle from "./headerTitle";
 
 const navbarFont = Englebert({ subsets: ["latin"], weight: ["400"] });
-
 
 export default function Navbar({ sections }) {
   const scrollToSection = (id) => {
@@ -24,15 +24,21 @@ export default function Navbar({ sections }) {
     }
   };
 
+  const [activeSectionName, setActiveSectionName] = useState("Home"); // Aktif bölümün adını tutan state
+
   const [activeSection, setActiveSection] = useState("/");
 
-  const handleNavLinkClick = (id) => {
+  const handleNavLinkClick = (id, name) => {
     scrollToSection(id);
     setActiveSection(id);
+    setActiveSectionName(name);
   };
 
   return (
-    <nav className={`${navbarFont.className} fixed w-full top-0 py-4 left-0 text-white z-50 bg-background-dark`}>
+    <div>
+      <nav
+      className={`${navbarFont.className} fixed w-full top-0 py-4 left-0 text-white z-50 bg-background-dark`}
+    >
       <div className="mx-auto px-16 flex justify-between items-center">
         <div className="flex items-center">
           <Image
@@ -57,14 +63,13 @@ export default function Navbar({ sections }) {
                   key={section.id}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavLinkClick(section.id);
+                    handleNavLinkClick(section.id, section.name);
                   }}
                   className={clsx(
                     "hover:animate-pulse max-w-max cursor-pointer",
                     {
                       "text-text-light font-bold": activeSection === section.id,
                     }
-                    
                   )}
                 >
                   {section.name}
@@ -72,6 +77,9 @@ export default function Navbar({ sections }) {
               </ul>
             );
           })}
+
+
+          
         </div>
         {/* <div>
           <Link className="" href={"https://www.lyntechdigital.com"}>
@@ -86,5 +94,11 @@ export default function Navbar({ sections }) {
         </div> */}
       </div>
     </nav>
+    <div className={`${navbarFont.className} mix-blend-difference`}>
+            <HeaderTitle name={activeSectionName} />
+          </div> 
+    </div>
   );
 }
+
+
