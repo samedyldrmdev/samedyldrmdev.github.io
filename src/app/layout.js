@@ -20,6 +20,7 @@ import Footer from "./footer";
 import "atropos/css";
 import { useState, useEffect } from "react";
 import HeaderTitle from "./headerTitle";
+import Image from "next/image";
 
 // Linefont, wavefont, Moirai One(başlık),
 
@@ -51,8 +52,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${bodyFont.className} bg-background-light`}>
         {loading ? (
-          <div className="h-screen w-screen flex justify-center items-center ">
-            <div className="loader"></div>
+          <div className="flex justify-center items-center h-screen w-screen">
+            <Image className="w-24" src= {"/images/logo.gif"} height={720} width={720}>
+
+            </Image>
           </div>
         ) : (
           //
