@@ -24,6 +24,8 @@ export default function Navbar({ sections }) {
     }
   };
 
+   
+
   const [activeSectionName, setActiveSectionName] = useState("Home"); // Aktif bölümün adını tutan state
 
   const [activeSection, setActiveSection] = useState("/");
@@ -37,7 +39,7 @@ export default function Navbar({ sections }) {
   return (
     <div>
       <nav
-      className={`${navbarFont.className} fixed w-full top-0 py-4 left-0 text-white z-50 bg-background-dark`}
+      className={`${navbarFont.className} fixed w-full top-0 py-4 left-0 text-white z-50 bg-background-dark shadow-md shadow-background-less-dark`}
     >
       <div className="mx-auto px-16 flex justify-between items-center">
         <div className="flex items-center">

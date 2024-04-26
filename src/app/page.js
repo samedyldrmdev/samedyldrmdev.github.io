@@ -40,8 +40,8 @@ export default function Home() {
           </div>
           <div>
             <Image
-              className="absolute bottom-0 w-[45rem] pl-12 pt-10 grayscale"
-              src={"/images/pp2.png"}
+              className="bottom-0 w-96 rounded-full pl-12 pt-10 grayscale"
+              src={"/images/pp.jpg"}
               height={1024}
               width={1024}
             />

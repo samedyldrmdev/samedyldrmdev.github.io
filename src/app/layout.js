@@ -46,14 +46,15 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     setLoading(false);
-  }, []);
+  }, [2000]);
 
+  
   return (
     <html lang="en">
       <body className={`${bodyFont.className} bg-background-light`}>
         {loading ? (
           <div className="flex justify-center items-center h-screen w-screen">
-            <Image className="w-24" src= {"/images/logo.gif"} height={720} width={720}>
+            <Image className="w-24" src= {"/images/logo.gif"} height={720} width={720} unoptimized>
 
             </Image>
           </div>
