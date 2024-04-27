@@ -11,7 +11,7 @@ import {
   faBehance,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderTitle from "./headerTitle";
 
 const navbarFont = Englebert({ subsets: ["latin"], weight: ["400"] });
@@ -33,6 +33,53 @@ export default function Navbar({ sections }) {
     setActiveSection(id);
     setActiveSectionName(name);
   };
+
+  useEffect(() => {
+    // Sayfa kaydırıldığında çalışacak fonksiyonu tanımla
+    const handleScroll = () => {
+      // Belirli bir eşik değeri tanımla
+      const threshold = 100;
+  
+      // Bölümler dizisini döngüye al
+      sections.forEach((section) => {
+        // Her bir bölümün DOM öğesini al
+        const element = document.getElementById(section.id);
+        if (element) {
+          // Bölümün sayfa üzerindeki konumunu hesapla
+          const top = element.getBoundingClientRect().top;
+  
+          // Eğer bölümün üst kenarı 0 ile threshold arasında ise
+          if (top >= 0 && top <= threshold) {
+            // Aktif bölümü ve adını konsola yazdır
+            console.log(section.id);
+            console.log(section.name);
+            // Aktif bölümü ve adını state'e güncelle
+            setActiveSection(section.id);
+            setActiveSectionName(section.name);
+          }
+        }
+      });
+    };
+  
+    // İlk render sırasında handleScroll fonksiyonunu çağırarak, aktif bölümü belirle
+    handleScroll();
+  
+    // Sayfa yüklendiğinde ve her pencere kaydırıldığında olay dinleyicisini ekle
+    window.addEventListener("scroll", handleScroll);
+  
+    // Temizlik: Component kaldırıldığında olay dinleyicisini kaldır
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [sections, setActiveSection, setActiveSectionName]); // useEffect'in yeniden çalışmasını sağlamak için bağımlılıklar eklendi
+  
+  
+  
+  
+  
+  
+  
+  
 
   return (
     <div>
@@ -92,9 +139,7 @@ export default function Navbar({ sections }) {
         </div> */}
         </div>
       </nav>
-      <div
-        className={`${navbarFont.className} mix-blend-difference`}
-      >
+      <div className={`${navbarFont.className} mix-blend-difference`}>
         <HeaderTitle name={activeSectionName} />
       </div>
     </div>
