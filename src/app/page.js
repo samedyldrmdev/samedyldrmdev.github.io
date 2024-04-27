@@ -22,10 +22,10 @@ export default function Home() {
           DESIGNER & DEVELOPER
         </h1> */}
       </div>
-      <div className="flex justify-center flex-col items-center h-screen px-40 ml-14">
+      <div className="flex min-w-full justify-center flex-col items-center h-screen px-40 ml-14">
         <div className="grid grid-cols-2">
           <div className="flex flex-col justify-end">
-            <h1 className="text-7xl font-semibold">Hi, I'm Samed!</h1>
+            <h1 className="lg:text-7xl md:text-5xl sm:text-2xl font-semibold">Hi, I'm Samed!</h1>
             <p className="py-4">
               Someone striving to leave my mark in the digital world.{" "}
             </p>
@@ -46,7 +46,7 @@ export default function Home() {
               width={1024}
             />
           </div>
-          <div className="w-full h-1/3 bg-[#252525] absolute bottom-0 left-0 -z-40 "></div>
+          <div className="w-full h-1/2 bg-[#252525] absolute bottom-0 left-0 -z-40 "></div>
         </div>
         <div className="absolute bottom-3 right-1/2">
           <div className="scroll-down  bg-white"></div>

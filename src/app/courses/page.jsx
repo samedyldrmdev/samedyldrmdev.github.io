@@ -99,7 +99,7 @@ export default function Courses() {
     <div className="min-h-screen flex justify-center flex-col mt-4">
       {Object.keys(coursesByOrganization).map((org) => (
         <div className="flex justify-start items-center flex-col" key={org}>
-          <div className="bg-blue-500  justify-start w-1/2 rounded-2xl m-1">
+          <div className="bg-blue-500  justify-start  w-1/2 rounded-2xl m-1">
             <h1 className="font-bold text-lg p-3 text-white">{org}</h1>
           </div>
           {coursesByOrganization[org].map((course, index) => (

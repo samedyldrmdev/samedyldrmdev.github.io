@@ -9,12 +9,12 @@ body {
 
 html::-webkit-scrollbar {
   width: 0.7rem;
-  background-color: #1f2833;
+  background-color: white;
 }
 
 html::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background-color: #66fcf1;
+  background-color: #1f2833;
 }
 /* İmage Maske */
 .mask {

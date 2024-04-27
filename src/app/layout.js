@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${bodyFont.className} bg-background-light`}>
         {loading ? (
-          <div className="flex justify-center items-center h-screen w-screen">
+          <div className="flex justify-center items-center h-screen w-screen md:h-1/2">
             <Image className="w-24" src= {"/images/logo.gif"} height={720} width={720} unoptimized>
 
             </Image>

@@ -38,7 +38,7 @@ const skillsByOrganization = skills.reduce((acc, skill) => {
 export default function Skills() {
   return (
     <div className="min-h-screen p-40 flex justify-center items-center">
-      <div className="grid grid-cols-3 gap-20">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-20">
         {Object.keys(skillsByOrganization).map((type) => (
           <div className="" key={type}>
             <h1 className="font-bold p-2 text-center text-white bg-background-dark rounded-full">

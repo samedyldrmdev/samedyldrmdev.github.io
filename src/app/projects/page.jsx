@@ -10,13 +10,12 @@ import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 export default function Projects() {
   const links = [
     {
-      name: "Lyn Tech (My Digital Agent)",
+      name: "Lyn Tech (My Digital Agency)",
 
-      description:
-        "To do list project that I wrote with HTML, CSS and Javascript. I used CSS and Javascript effectively while creating this app. It has many functions such as adding, deleting and marking lists. In addition, all these transactions are recorded in LocalStorage. In this way, your changes will not be deleted when you refresh the browser! Thanks to this project, I developed myself a little more. I learned the concept of LocalStorage well. This project has become a small resource to look back on as I create my future projects.",
-      image: "/images/projects/to-do-app.png",
-      url: "https://google.com",
-      skills: "HTML, CSS, Javascript",
+      description: "Lyn Tech Digital : Dijital Reklam Ajansı",
+      image: "/images/projects/lyntech.jpg",
+      url: "https://lyntechdigital.com",
+      skills: "Nextjs, Javascript, Tailwind CSS",
     },
     {
       name: "WortKarte",
@@ -82,7 +81,7 @@ export default function Projects() {
   // }, [active])
 
   return (
-    <div className="bg-background-dark min-h-screen grid grid-cols-3 px-40 justify-center items-center text-white gap-20">
+    <div className="bg-background-dark min-h-screen grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 px-40 justify-center items-center text-white gap-20">
       {/* show */}
       <div className="show col-span-2 justify-center items-center">
         <h1 className="font-bold text-text-light p-5">{active.name}<Link

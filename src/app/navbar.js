@@ -24,8 +24,6 @@ export default function Navbar({ sections }) {
     }
   };
 
-   
-
   const [activeSectionName, setActiveSectionName] = useState("Home"); // Aktif bölümün adını tutan state
 
   const [activeSection, setActiveSection] = useState("/");
@@ -39,51 +37,49 @@ export default function Navbar({ sections }) {
   return (
     <div>
       <nav
-      className={`${navbarFont.className} fixed w-full top-0 py-4 left-0 text-white z-50 bg-background-dark shadow-md shadow-background-less-dark`}
-    >
-      <div className="mx-auto px-16 flex justify-between items-center">
-        <div className="flex items-center">
-          <Image
-            className="w-6"
-            src={"/images/sylogo.png"}
-            width={100}
-            height={100}
-            alt="Lyn Tech Digital"
-          ></Image>
+        className={`${navbarFont.className} fixed w-full top-0 py-4 left-0 text-white z-50 bg-background-dark shadow-md shadow-background-less-dark`}
+      >
+        <div className="mx-auto lg:px-16 flex justify-between items-center">
+          <div className="flex items-center">
+            <Image
+              className="w-6 "
+              src={"/images/sylogo.png"}
+              width={100}
+              height={100}
+              alt="Lyn Tech Digital"
+            ></Image>
 
-          <Link href={"/"}>
-            <h1 className="text-xl pl-4 text-white">
-              samed<span className="font-bold text-text-light">yıldırım</span>
-            </h1>
-          </Link>
-        </div>
-        <div className="space-x-12 flex flex-row">
-          {sections.map((section) => {
-            return (
-              <ul>
-                <li
-                  key={section.id}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavLinkClick(section.id, section.name);
-                  }}
-                  className={clsx(
-                    "hover:animate-pulse max-w-max cursor-pointer",
-                    {
-                      "text-text-light font-bold": activeSection === section.id,
-                    }
-                  )}
-                >
-                  {section.name}
-                </li>
-              </ul>
-            );
-          })}
-
-
-          
-        </div>
-        {/* <div>
+            <Link href={"/"}>
+              <h1 className="text-xl pl-4 text-white">
+                samed<span className="font-bold text-text-light">yıldırım</span>
+              </h1>
+            </Link>
+          </div>
+          <div className="space-x-12 flex flex-row">
+            {sections.map((section) => {
+              return (
+                <ul>
+                  <li
+                    key={section.id}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavLinkClick(section.id, section.name);
+                    }}
+                    className={clsx(
+                      "hover:animate-pulse max-w-max cursor-pointer",
+                      {
+                        "text-text-light font-bold":
+                          activeSection === section.id,
+                      }
+                    )}
+                  >
+                    {section.name}
+                  </li>
+                </ul>
+              );
+            })}
+          </div>
+          {/* <div>
           <Link className="" href={"https://www.lyntechdigital.com"}>
             <Image
             className="w-12"
@@ -94,13 +90,13 @@ export default function Navbar({ sections }) {
             ></Image>
           </Link>
         </div> */}
+        </div>
+      </nav>
+      <div
+        className={`${navbarFont.className} mix-blend-difference sm:hidden md:hidden`}
+      >
+        <HeaderTitle name={activeSectionName} />
       </div>
-    </nav>
-    <div className={`${navbarFont.className} mix-blend-difference`}>
-            <HeaderTitle name={activeSectionName} />
-          </div> 
     </div>
   );
 }
-
-
