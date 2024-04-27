@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en">
-      <body className={`${bodyFont.className} bg-background-light`}>
+      <body className={`${bodyFont.className} `}>
         {loading ? (
           <div className="flex justify-center items-center h-screen">
             <Image className="w-24" src= {"/images/logo.gif"} height={720} width={720} unoptimized>
@@ -60,12 +60,14 @@ export default function RootLayout({ children }) {
           </div>
         ) : (
           //
-          <div>
+          <div className="">
+            <div>
             <Navbar sections={sections} />
-            <div className="flex justify-center items-center">{children}</div>
+            <div className="flex justify-center items-center bg-background-light">{children}</div>
             <Social />
             
             <Footer />
+          </div>
           </div>
         )}
       </body>

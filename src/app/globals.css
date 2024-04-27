@@ -9,7 +9,7 @@ body {
 
 html::-webkit-scrollbar {
   width: 0.7rem;
-  background-color: white;
+  /* background-color: white; */
 }
 
 html::-webkit-scrollbar-thumb {
@@ -25,20 +25,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 
-@keyframes loading {
-  0% {
-    background-position: 0% 0;  
-  }
-  100% {
-    background-position: 100% 0; 
-  }
-}
 
-.loading-background{
-  background-image: linear-gradient(to left, white, #3b82f6); /* Geçiş yapmak istediğiniz renkler */
-  background-size: 200% 100%; /* Background'ın iki katı genişlikte */
-  animation: loading 1s linear infinite; /* 5 saniyede bir tamamlanacak, süresini isteğinize göre ayarlayabilirsiniz */
-}
 
 /* Scroll Down Animation */
 

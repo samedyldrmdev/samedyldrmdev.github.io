@@ -16,7 +16,7 @@ export default function Home() {
       <Header title="/" />
 
       {/* <div className="absolute right-1 bottom-2"> */}
-        {/* <h1
+      {/* <h1
           className={`${textMeOne.className} text-white h-96 text-3xl -rotate-90 flex justify-end items-end mix-blend-difference`}
         >
           DESIGNER & DEVELOPER
@@ -24,18 +24,29 @@ export default function Home() {
       {/* </div> */}
       <div className="flex w-full justify-center items-center h-screen">
         <div className="grid grid-cols-2 ">
-          <div className="flex flex-col justify-center mix-blend-difference">
-            <h1 className="lg:text-7xl md:text-5xl sm:text-2xl font-semibold text-white">
+          <div className="flex flex-col justify-center">
+            <h1 className="lg:text-7xl md:text-5xl sm:text-2xl font-semibold text-text-dark">
               Hi, I'm Samed!
             </h1>
-            <p className="py-4 text-white">
+            <p className="py-4 text-text-dark">
               Someone striving to leave my mark in the digital world.
               <br />
               I'm here to share my passion for design and creative energy!
             </p>
 
+            <ul className="list-decimal ">
+              <h1 className="font-bold text-black mt-10">YAPILACAKLAR</h1>
+              <li>FOOTER - TÜM PROJELER SAYFASI EKLE - COURSES KISMINI DÜZELT - ABOUT'U AYARLA!</li>
+              <li>SCROLL BAR RENGİNİ STİLİNİ DEĞİŞTİR</li>
+              <li>MOUSE SCROLL İLE BİR SAYFA İLERİ-GERİ GİT.</li>
+              <li>SAĞ VEYA SOL TARAFA SAYFAYI TAKİP EDEN LINE EKLE.</li>
+              <li className="">NAVBAR HOVER ANİMASYONUNU DEĞİŞTİR!</li>
+              <li className="text-blue-500">ABOUT DÜZENLEME ÖNERİLERİ</li>
+            </ul>
+
             <Image
-              className="w-48 invert"
+              className="w-48"
+              // invert
               src={"/images/imza.png"}
               height={1920}
               width={1080}

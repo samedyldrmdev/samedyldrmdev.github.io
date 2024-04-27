@@ -24,7 +24,7 @@ export default function Navbar({ sections }) {
     }
   };
 
-  const [activeSectionName, setActiveSectionName] = useState("Home"); // Aktif bölümün adını tutan state
+  const [activeSectionName, setActiveSectionName] = useState("/"); // Aktif bölümün adını tutan state
 
   const [activeSection, setActiveSection] = useState("/");
 
