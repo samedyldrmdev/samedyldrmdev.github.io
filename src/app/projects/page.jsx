@@ -22,7 +22,7 @@ export default function Projects() {
       description:
         "Ich habe die deutsche Vokabelanwendung entwickelt, die ich zuvor gemacht hatte. Mit dieser Entwicklung können Sie die Wörter sehen, wenn Sie mit der Maus über den weißen Bereich fahren, sodass Sie sich selbst testen können. Darüber hinaus umfasst das Projekt deutsche und türkische Aussprachen von Wörtern. 'Tekrar Dinle!', wenn Sie die Aussprache nicht verstehen. Mit der Taste können Sie noch einmal zuhören.",
       image: "/images/projects/germanwords.jpeg",
-      url: "https://samedyldrmdev.github.io/front-end-projects/WortKarte/index.html",
+      url: "/projects/WortKarte/index.html",
       skills: "HTML, CSS, Javascript",
     },
     {
@@ -30,7 +30,7 @@ export default function Projects() {
       description:
         "My personal web page that I created using HTML and CSS. I continue to develop this web page that contains information about me.",
       image: "/images/projects/portfolio-website.png",
-      url: "https://samedyldrmdev.github.io/index.html",
+      url: "/",
       skills: "HTML, CSS, Javascript",
     },
     {
@@ -45,14 +45,14 @@ export default function Projects() {
       description:
         "In this project, the products dynamically pull information such as name, detail, price and image links from the csv file. It is then filtered by class names. With the add to cart feature, the products are saved in a class named 'basket'. And operations such as increasing or decreasing the number of products can be made. Also, the project is responsive.",
       image: "/images/projects/qr-menu.png",
-      url: "/",
+      url: "/projects/qrMenu/",
       skills: "HTML, CSS, Javascript, Fetch API",
     },
     {
       name: "Search Image",
       description: "Search Image Project.",
       image: "/images/projects/searchimage.png",
-      url: "https://google.com",
+      url: "/searchImage",
       skills: "React, Tailwind CSS",
     },
     {
@@ -60,7 +60,7 @@ export default function Projects() {
       description:
         "To do list project that I wrote with HTML, CSS and Javascript. I used CSS and Javascript effectively while creating this app. It has many functions such as adding, deleting and marking lists. In addition, all these transactions are recorded in LocalStorage. In this way, your changes will not be deleted when you refresh the browser! Thanks to this project, I developed myself a little more. I learned the concept of LocalStorage well. This project has become a small resource to look back on as I create my future projects.",
       image: "/images/projects/to-do-app.png",
-      url: "https://google.com",
+      url: "/projects/toDoList",
       skills: "HTML, CSS, Javascript",
     },
   ];
