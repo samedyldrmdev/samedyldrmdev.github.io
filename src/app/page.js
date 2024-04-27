@@ -22,17 +22,20 @@ export default function Home() {
           DESIGNER & DEVELOPER
         </h1> */}
       </div>
-      <div className="flex min-w-full justify-center flex-col items-center h-screen px-40 ml-14">
-        <div className="grid grid-cols-2">
-          <div className="flex flex-col justify-end">
-            <h1 className="lg:text-7xl md:text-5xl sm:text-2xl font-semibold">Hi, I'm Samed!</h1>
-            <p className="py-4">
-              Someone striving to leave my mark in the digital world.{" "}
+      <div className="flex min-w-full justify-center items-center h-screen px-40 ml-14 ">
+        <div className="grid grid-cols-2 ">
+          <div className="flex flex-col justify-center mix-blend-difference">
+            <h1 className="lg:text-7xl md:text-5xl sm:text-2xl font-semibold text-white">
+              Hi, I'm Samed!
+            </h1>
+            <p className="py-4 text-white">
+              Someone striving to leave my mark in the digital world.
+              <br />
+              I'm here to share my passion for design and creative energy!
             </p>
-            <p>I'm here to share my passion for design and creative energy!</p>
 
             <Image
-              className="w-44"
+              className="w-48 invert"
               src={"/images/imza.png"}
               height={1920}
               width={1080}
@@ -51,7 +54,6 @@ export default function Home() {
         <div className="absolute bottom-3 right-1/2">
           <div className="scroll-down  bg-white"></div>
         </div>
-      
       </div>
       {/* <HeaderTitle title="Home" /> */}
       <Header title="About" />
