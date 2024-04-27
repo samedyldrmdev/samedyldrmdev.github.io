@@ -16,12 +16,12 @@ export default function About() {
     <div className="h-screen bg-background-dark text-white p-40">
       
       <div className="flex flex-row justify-center gap-10 items-center p-5">
-        <Image
+        {/* <Image
             className="w-96 rounded-full grayscale hover:grayscale-0"
             src={"/images/pp.jpg"}
             height={1920}
             width={1080}
-          />
+          /> */}
         <p>
           Hello! I'm Abdülsamed, a Mechanical Engineer who has transitioned into
           the world of software development. I graduated from Beykent University

@@ -34,7 +34,7 @@ export default function Home() {
               I'm here to share my passion for design and creative energy!
             </p>
 
-            <ul className="list-decimal ">
+            {/* <ul className="list-decimal ">
               <h1 className="font-bold text-black mt-10">YAPILACAKLAR</h1>
               <li>FOOTER - TÜM PROJELER SAYFASI EKLE - COURSES KISMINI DÜZELT - ABOUT'U AYARLA!</li>
               <li>SCROLL BAR RENGİNİ STİLİNİ DEĞİŞTİR</li>
@@ -42,7 +42,7 @@ export default function Home() {
               <li>SAĞ VEYA SOL TARAFA SAYFAYI TAKİP EDEN LINE EKLE.</li>
               <li className="">NAVBAR HOVER ANİMASYONUNU DEĞİŞTİR!</li>
               <li className="text-blue-500">ABOUT DÜZENLEME ÖNERİLERİ</li>
-            </ul>
+            </ul> */}
 
             <Image
               className="w-48"
