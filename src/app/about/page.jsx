@@ -3,7 +3,7 @@ import HeaderTitle from "../headerTitle";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-background-dark text-white p-40">
+    <div className="h-screen bg-background-dark text-white p-40">
       <div className="flex flex-row justify-center gap-10 items-center p-5">
         {/* <Image
             className="w-96 rounded-full grayscale hover:grayscale-0"

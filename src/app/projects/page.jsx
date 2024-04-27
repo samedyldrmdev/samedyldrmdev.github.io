@@ -81,7 +81,7 @@ export default function Projects() {
   // }, [active])
 
   return (
-    <div className="bg-background-dark min-h-screen grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 px-40 justify-center items-center text-white gap-20">
+    <div className="bg-background-dark min-h-screen grid grid-cols-3 px-40 justify-center items-center text-white gap-20">
       {/* show */}
       <div className="show col-span-2 justify-center items-center">
         <h1 className="font-bold text-text-light p-5">{active.name}<Link

@@ -15,14 +15,14 @@ export default function Home() {
     <div>
       <Header title="/" />
 
-      <div className="absolute right-1 w-96 bottom-2">
+      {/* <div className="absolute right-1 bottom-2"> */}
         {/* <h1
           className={`${textMeOne.className} text-white h-96 text-3xl -rotate-90 flex justify-end items-end mix-blend-difference`}
         >
           DESIGNER & DEVELOPER
         </h1> */}
-      </div>
-      <div className="flex min-w-full justify-center items-center h-screen px-40 ml-14 ">
+      {/* </div> */}
+      <div className="flex w-full justify-center items-center h-screen">
         <div className="grid grid-cols-2 ">
           <div className="flex flex-col justify-center mix-blend-difference">
             <h1 className="lg:text-7xl md:text-5xl sm:text-2xl font-semibold text-white">
@@ -52,10 +52,9 @@ export default function Home() {
           <div className="w-full h-1/2 bg-[#252525] absolute bottom-0 left-0 -z-40 "></div>
         </div>
         <div className="absolute bottom-3 right-1/2">
-          <div className="scroll-down  bg-white"></div>
+          <div className="scroll-down bg-white"></div>
         </div>
       </div>
-      {/* <HeaderTitle title="Home" /> */}
       <Header title="About" />
       <About />
       <Header title="Skills" />
