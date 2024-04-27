@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
           //
           <div className="">
             <div>
-            <Navbar sections={sections} />
+             <Navbar sections={sections} />
             <div className="flex justify-center items-center bg-background-light">{children}</div>
             <Social />
             

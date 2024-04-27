@@ -93,7 +93,7 @@ export default function Projects() {
         
         <div>
           <Image
-            className="rounded-3xl shadow-md shadow-text-light"
+            className="rounded-2xl shadow-md shadow-dark-iki"
             src={active.image}
             height={1920}
             width={1080}
