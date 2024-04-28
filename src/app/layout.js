@@ -21,6 +21,12 @@ import "atropos/css";
 import { useState, useEffect } from "react";
 import HeaderTitle from "./headerTitle";
 import Image from "next/image";
+import About from "./about/page";
+import Courses from "./courses/page";
+import Projects from "./projects/page";
+import Skills from "./skills/page";
+import Contact from "./contact/page";
+import Header from "./header";
 
 // Linefont, wavefont, Moirai One(başlık),
 
@@ -52,7 +58,6 @@ export default function RootLayout({ children }) {
     setLoading(false);
   }, [2000]);
 
-  
   return (
     <html lang="en">
       <head>
@@ -64,20 +69,37 @@ export default function RootLayout({ children }) {
       <body className={`${bodyFont.className} `}>
         {loading ? (
           <div className="flex justify-center items-center h-screen">
-            <Image className="w-24" src= {"/images/logo.gif"} height={720} width={720} unoptimized>
-
-            </Image>
+            <Image
+              className="w-24"
+              src={"/images/logo.gif"}
+              height={720}
+              width={720}
+              unoptimized
+            ></Image>
           </div>
         ) : (
           //
           <div className="">
             <div>
-             <Navbar sections={sections} />
-            <div className="flex justify-center items-center bg-background-light">{children}</div>
-            <Social />
-            
-            <Footer />
-          </div>
+              <Navbar sections={sections} />
+              <div className="flex justify-center items-center bg-background-light">
+                {children}
+              </div>
+
+              <Header title="About" />
+              <About />
+              <Header title="Skills" />
+              <Skills />
+              <Header title="Projects" />
+              <Projects />
+              <Header title="Courses" />
+              <Courses />
+              <Header title="Contact" />
+              <Contact />
+              <Social/>
+
+              <Footer />
+            </div>
           </div>
         )}
       </body>

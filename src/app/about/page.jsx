@@ -13,7 +13,7 @@ export default function About() {
   }
 
   return (
-    <div className="h-screen bg-background-dark text-white p-40">
+    <div className="min-h-screen bg-background-dark text-white p-2 md:p-40 lg:p-40">
       
       <div className="flex flex-row justify-start gap-10 items-center p-5">
         

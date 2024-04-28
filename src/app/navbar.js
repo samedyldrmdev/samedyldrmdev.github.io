@@ -13,6 +13,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useState } from "react";
 import HeaderTitle from "./headerTitle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const navbarFont = Englebert({ subsets: ["latin"], weight: ["400"] });
 
@@ -70,15 +72,51 @@ export default function Navbar({ sections }) {
     };
   }, [sections, setActiveSection, setActiveSectionName]); // useEffect'in yeniden çalışmasını sağlamak için bağımlılıklar eklendi
 
+  // Mobile için Navbar Show
+
+  const [navbarShow, setNavbarShow] = useState(false);
+  const showNavbar = () => {
+    
+    setNavbarShow(!navbarShow);
+  };
+
   return (
     <div>
+      <div
+        className={navbarShow ? "fixed h-full w-full bg-black z-40" : "hidden"}
+      >
+        <div className="h-full w-full flex flex-col justify-center items-center z-50 text-white">
+            {sections.map((section) => {
+              return (
+                <ul>
+                  <li
+                    key={section.id}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavLinkClick(section.id, section.name);
+                    }}
+                    className={clsx(
+                      "hover:animate-pulse max-w-max cursor-pointer text-xl p-2",
+                      {
+                        "text-text-light font-bold":
+                          activeSection === section.id,
+                      }
+                    )}
+                  >
+                    {section.name}
+                  </li>
+                </ul>
+              );
+            })}
+          </div>
+      </div>
       <nav
         className={`${navbarFont.className} fixed w-full top-0 py-4 left-0 text-white z-50 bg-background-dark shadow-md shadow-background-less-dark`}
       >
-        <div className="mx-auto lg:px-16 flex justify-between items-center">
+        <div className="mx-auto px-8   flex justify-between items-center ">
           <div className="flex items-center">
             <Image
-              className="w-8 "
+              className="w-8"
               src={"/images/sylogoneon.png"}
               width={100}
               height={100}
@@ -91,7 +129,7 @@ export default function Navbar({ sections }) {
               </h1>
             </Link>
           </div>
-          <div className="space-x-12 flex flex-row">
+          <div className="space-x-12  flex-row hidden lg:flex ">
             {sections.map((section) => {
               return (
                 <ul>
@@ -115,20 +153,19 @@ export default function Navbar({ sections }) {
               );
             })}
           </div>
-          {/* <div>
-          <Link className="" href={"https://www.lyntechdigital.com"}>
-            <Image
-            className="w-12"
-              src={"/images/lyntechlogo.png"}
-              width={720}
-              height={720}
-              alt="Lyn Tech Digital"
-            ></Image>
-          </Link>
-        </div> */}
+          <div
+            onClick={() => {
+              showNavbar();
+            }}
+            className="flex lg:hidden cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faBars} />
+          </div>
         </div>
       </nav>
-      <div className={`${navbarFont.className} mix-blend-difference`}>
+      <div
+        className={`${navbarFont.className} mix-blend-difference hidden lg:block md:block`}
+      >
         <HeaderTitle name={activeSectionName} />
       </div>
     </div>

@@ -26,10 +26,10 @@ export default function Projects() {
       skills: "HTML, CSS, Javascript",
     },
     {
-      name: "Personal Web Page",
+      name: "Portfolio Website",
       description:
         "My personal web page that I created using HTML and CSS. I continue to develop this web page that contains information about me.",
-      image: "/images/projects/portfolio-website.png",
+      image: "/images/projects/portfolio.gif",
       url: "/",
       skills: "HTML, CSS, Javascript",
     },
@@ -80,7 +80,29 @@ export default function Projects() {
   // }, [active])
 
   return (
-    <div className="bg-background-dark min-h-screen grid grid-cols-3 px-40 justify-center items-center text-white gap-20">
+    <div className="bg-background-dark min-h-screen grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 justify-center items-center text-white gap-2 md:gap-10 lg:gap-20 px-12 py-4 md:px-20 lg:px-40">
+
+      {/* projects */}
+      <div className="projects ">
+        {/* <h1 className="font-bold text-2xl text-red-400 ">Projects</h1> */}
+        {links.map((project) => {
+          return (
+            <div
+              onMouseEnter={() => {
+                mouseEnter(project);
+              }}
+              onMouseLeave={() => {
+                mouseLeave(project);
+              }}
+              className={`cursor-pointer p-4 m-2 w-full rounded-full  hover:bg-blue-500 hover:text-white hover:font-bold ${active.name === project.name ? "bg-blue-500 font-bold" : "bg-white text-background-dark" }`  }
+            >
+              {project.name===active.name ? (<span className="px-2"> <FontAwesomeIcon className="px-1" icon={faAnglesRight}/> {project.name}</span>) : (<span>{project.name}</span>)}
+              {/* {project.name===active.name ? {project.name}} */}
+            </div>
+          );
+        })}
+      </div>
+
       {/* show */}
       <div className="show col-span-2 justify-center items-center">
         <h1 className="font-bold text-text-light p-5">{active.name}<Link
@@ -114,26 +136,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* projects */}
-      <div className="projects">
-        {/* <h1 className="font-bold text-2xl text-red-400 ">Projects</h1> */}
-        {links.map((project) => {
-          return (
-            <div
-              onMouseEnter={() => {
-                mouseEnter(project);
-              }}
-              onMouseLeave={() => {
-                mouseLeave(project);
-              }}
-              className={`cursor-pointer p-4 m-2 w-full rounded-full  hover:bg-blue-500 hover:text-white hover:font-bold ${active.name === project.name ? "bg-blue-500 font-bold" : "bg-white text-background-dark" }`  }
-            >
-              {project.name===active.name ? (<span className="px-2"> <FontAwesomeIcon className="px-1" icon={faAnglesRight}/> {project.name}</span>) : (<span>{project.name}</span>)}
-              {/* {project.name===active.name ? {project.name}} */}
-            </div>
-          );
-        })}
-      </div>
+      
       {/* <HeaderTitle title="Projects" /> */}
     </div>
   );

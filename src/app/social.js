@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Social() {
   return (
-    <div>
+    <div className="hidden md:block lg:block">
       <div className="fixed left-10 bottom-44 text-white mix-blend-difference">
       <div className="flex flex-col w-full h-full p-2 py-5 gap-3">
         <Link href={"https://twitter.com/sametyylldrm"}>

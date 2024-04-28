@@ -6,7 +6,7 @@ const greatvibes = Great_Vibes({ subsets: ["latin"], weight: ["400"] });
 
 export default function Footer() {
   return (
-    <div className="w-full bottom-0 py-2 bg-background grid grid-cols-4 gap-10 p-10 px-40  justify-center text-center text-background-dark bg-background-light  ">
+    <div className="w-full bottom-0 py-2 bg-background grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10 p-10 px-2 lg:px-40  justify-center text-center text-background-dark bg-background-light  ">
       <div className="flex flex-col justify-center items-center  ">
         <Image
           className="w-24 "

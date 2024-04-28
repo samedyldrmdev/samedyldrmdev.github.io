@@ -101,7 +101,7 @@ export default function Courses() {
   };
 
   return (
-    <div className="min-h-screen flex justify-center flex-col mt-4">
+    <div className="min-h-screen flex justify-center flex-col mt-4 bg-background-light">
       {Object.keys(coursesByOrganization).map((org,orgIndex) => (
         <div className="flex justify-start items-center flex-col">
           <div className="bg-blue-500  justify-start  w-1/2 rounded-xl m-1 font-bold text-lg p-3 text-white">
