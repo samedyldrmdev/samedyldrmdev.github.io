@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faChevronDown,
+  faChevronDown,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
@@ -81,51 +81,45 @@ export default function Courses() {
     return acc;
   }, {});
 
-  // Kurslara benzersiz ID'ler ekleyin
-  courses.forEach((course, index) => {
-    course.id = index;
-  });
-
   const [visibility, setVisibility] = useState(
     new Array(Object.keys(coursesByOrganization).length).fill(false)
   );
 
-  // Tıklama işlevi
-  const detailsOn = (courseId) => {
-    setVisibility(prevVisibility => {
-      const newVisibility = new Array(courses.length).fill(false);
-      // const newVisibility = [...prevVisibility];
-      newVisibility[courseId] = !prevVisibility[courseId];
-      return newVisibility;
-    });
+  const onDetails = (index) => {
+    const newVisibility = new Array(
+      Object.keys(coursesByOrganization).length
+    ).fill(false);
+    if (visibility[index] === false) {
+      newVisibility[index] = !newVisibility[index];
+    }
+    setVisibility(newVisibility);
+    console.log(index, org)
   };
 
   return (
     <div className="min-h-screen flex justify-center flex-col mt-4">
-      {Object.keys(coursesByOrganization).map((org,orgIndex) => (
-        <div className="flex justify-start items-center flex-col">
-          <div className="bg-blue-500  justify-start  w-1/2 rounded-xl m-1 font-bold text-lg p-3 text-white">
-            {org}
+      {Object.keys(coursesByOrganization).map((org, index) => (
+        <div className="flex justify-start items-center flex-col" key={org}>
+          <div className="bg-blue-500  justify-start  w-1/2 rounded-2xl m-1">
+            <h1 className="font-bold text-lg p-3 text-white">{org}</h1>
           </div>
-          {coursesByOrganization[org].map((course, courseIndex) => (
-            <div className="bg-dark-iki hover:bg-[#3b3b3b] hover:shadow-md hover:shadow-black text-white w-1/2 rounded-xl cursor-pointer m-1">
-              <h2
-                onClick={() => {
-                  detailsOn(course.id);
-                }}
-                className="text-md p-3"
-              >
+          {coursesByOrganization[org].map((course) => (
+            <div
+              key={index}
+              onClick={() => {
+                onDetails(index);
+              }}
+              className="bg-dark-iki hover:bg-[#3b3b3b] hover:shadow-md hover:shadow-black text-white w-1/2 rounded-2xl cursor-pointer m-1"
+            >
+              <h1 className=" text-lg p-3">
                 {course.name}{" "}
                 <FontAwesomeIcon
-                  icon={visibility[course.id] ? faChevronRight : faChevronDown}
+                  icon={visibility[index] ? faChevronRight : faChevronDown}
                 />
-              </h2>
+              </h1>
               <div
-                onClick={() => {
-                  detailsOn(org, orgIndex, courseIndex);
-                }}
                 className={
-                  visibility[course.id] ? "visible rounded-b-2xl" : "hidden"
+                  visibility[index] ? "visible rounded-b-2xl" : "hidden"
                 }
               >
                 <p className="p-2">{course.desc}</p>
@@ -140,9 +134,11 @@ export default function Courses() {
                 </p>
               </div>
             </div>
-          ))}{" "}
+          ))}
         </div>
       ))}
+      {/* <HeaderTitle title="Certificates & Courses" /> */}
     </div>
   );
 }
+

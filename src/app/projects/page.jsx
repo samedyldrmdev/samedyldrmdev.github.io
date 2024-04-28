@@ -72,7 +72,6 @@ export default function Projects() {
   };
 
   const mouseLeave = () => {
-    console.log("hover deaktif.");
     setActive(active);
   };
 

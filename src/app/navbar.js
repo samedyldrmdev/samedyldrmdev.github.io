@@ -50,9 +50,6 @@ export default function Navbar({ sections }) {
 
           // Eğer bölümün üst kenarı 0 ile threshold arasında ise
           if (top >= 0 && top <= threshold) {
-            // Aktif bölümü ve adını konsola yazdır
-            console.log(section.id);
-            console.log(section.name);
             // Aktif bölümü ve adını state'e güncelle
             setActiveSection(section.id);
             setActiveSectionName(section.name);
@@ -81,8 +78,8 @@ export default function Navbar({ sections }) {
         <div className="mx-auto lg:px-16 flex justify-between items-center">
           <div className="flex items-center">
             <Image
-              className="w-6 "
-              src={"/images/sylogo.png"}
+              className="w-8 "
+              src={"/images/sylogo2.png"}
               width={100}
               height={100}
               alt="Lyn Tech Digital"
