@@ -79,7 +79,7 @@ export default function Navbar({ sections }) {
           <div className="flex items-center">
             <Image
               className="w-8 "
-              src={"/images/sylogo2.png"}
+              src={"/images/sylogoneon.png"}
               width={100}
               height={100}
               alt="Lyn Tech Digital"
