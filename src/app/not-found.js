@@ -21,7 +21,7 @@ export default function NotFound() {
             icon={faXmark}
           /></Link>
         </div>
-        <div className="py-36 px-96">
+        <div className="py-28 px-96">
           <h1 className="font-bold text-9xl p-12">404!</h1>
           <h2 className="text-2xl">Oops! You're a Bit Lost! 🚀</h2>
           <p>
@@ -39,7 +39,7 @@ export default function NotFound() {
               Go Back to Home! 🏠
             </Link>
           </div>
-          <div className="fixed right-0 bottom-0 invert -z-10 opacity-75">
+          <div className="fixed right-0 top-0 invert -z-10 opacity-50">
             <Image src={"/images/notFoundBg.gif"} width={1920} height={1080} />
           </div>
         </div>
