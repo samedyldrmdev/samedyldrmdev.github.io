@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Header title="/" />
       <div className="flex w-full justify-center items-center h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ">
+        <div className="grid grid-cols-1 p-12 md:grid-cols-2 lg:grid-cols-2 text-center ">
           <div className="flex flex-col justify-center">
             <h1 className="lg:text-7xl md:text-5xl sm:text-2xl font-semibold text-text-dark">
               Hi, I'm Samed!
