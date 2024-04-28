@@ -43,6 +43,10 @@ const sections = [
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
+  const [metadata, setMetadata] = useState({
+    title: "Samed YILDIRIM",
+    description: "Samed YILDIRIM - Portfolio Website",
+  });
 
   useEffect(() => {
     setLoading(false);
@@ -51,6 +55,12 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" type="image/png" href="/images/sylogodark.png" />
+        {/* Diğer meta etiketleri */}
+      </head>
       <body className={`${bodyFont.className} `}>
         {loading ? (
           <div className="flex justify-center items-center h-screen">
