@@ -25,11 +25,10 @@ export default function NotFound() {
         </div>
         <div className="fixed invert -z-10 opacity-50">
           <Image
-          className="pointer-events-none"
             src={"/images/notFoundBg.gif"}
             width={1920}
             height={1080}
-          ></Image>
+          />
         </div>
       </div>
     </div>
