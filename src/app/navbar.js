@@ -94,6 +94,7 @@ export default function Navbar({ sections }) {
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavLinkClick(section.id, section.name);
+                      showNavbar();
                     }}
                     className={clsx(
                       "hover:animate-pulse max-w-max cursor-pointer text-xl p-2",
