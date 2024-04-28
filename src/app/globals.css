@@ -75,3 +75,14 @@ html::-webkit-scrollbar-thumb {
     opacity: 0;
   }
 }
+
+
+@layer utilities {
+  .wave {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' d='M0,128L40,138.7C80,149,160,171,240,181.3C320,192,400,192,480,181.3C560,171,640,149,720,133.3C800,117,880,107,960,106.7C1040,107,1120,117,1200,144C1280,171,1360,213,1400,234.7L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    width: 100%;
+    height: 60px;
+  }
+}
