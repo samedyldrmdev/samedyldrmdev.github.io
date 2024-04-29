@@ -6,8 +6,8 @@ const greatvibes = Great_Vibes({ subsets: ["latin"], weight: ["400"] });
 
 export default function Footer() {
   return (
-    <div className="w-full bottom-0 py-2 bg-background grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10 p-10 px-2 lg:px-40  justify-center text-center text-background-dark bg-background-light  ">
-      <div className="flex flex-col justify-center items-center  ">
+    <div className="w-full bottom-0 bg-background grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10 py-10 px-20  justify-center text-center text-background-dark bg-background-light  ">
+      <div className="flex flex-col justify-center items-center ">
         <Image
           className="w-24 "
           src={"/images/sylogodark.png"}
@@ -18,7 +18,7 @@ export default function Footer() {
           samed<span className="font-bold">yıldırım</span>
         </h1>
       </div>
-      <div className="items-start ">
+      <div className="items-start">
         <h1 className="font-bold p-2 ">Links</h1>
         <div className="w-full border border-background-dark"></div>
         <ul className="p-2">
@@ -29,7 +29,7 @@ export default function Footer() {
           <li>Contact</li>
         </ul>
       </div>
-      <div className="items-start">
+      <div className="items-start ">
         <h1 className="font-bold p-2 ">LynTech Digital</h1>
         <div className="w-full border border-background-dark "></div>
         <ul className="p-2">
