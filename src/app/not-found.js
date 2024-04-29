@@ -12,7 +12,7 @@ import {
 
 export default function NotFound() {
   return (
-    <div className="h-full w-full fixed right-0 bottom-0 flex justify-center items-center bg-background-dark text-background-dark z-50">
+    <div className="h-full w-full fixed right-0 bottom-0 flex justify-center items-center bg-black text-background-dark z-50">
       <div className=" bg-background-light/90 rounded-3xl flex flex-col justify-center items-center text-center ">
         <div className="flex w-full h-full text-lg  p-5 justify-end items-end">
           
@@ -21,7 +21,7 @@ export default function NotFound() {
             icon={faXmark}
           /></Link>
         </div>
-        <div className="py-28 px-96">
+        <div className="py-28 px-12 md:px-48 lg:px-96">
           <h1 className="font-bold text-9xl p-12">404!</h1>
           <h2 className="text-2xl">Oops! You're a Bit Lost! 🚀</h2>
           <p>
