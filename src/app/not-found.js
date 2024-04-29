@@ -12,7 +12,7 @@ import {
 
 export default function NotFound() {
   return (
-    <div className="h-full w-full fixed right-0 bottom-0 flex justify-center items-center bg-black text-background-dark z-50">
+    <div className="h-full w-full fixed right-0 bottom-0 flex justify-center items-center bg-black text-background-dark ">
       <div className=" bg-background-light/90 rounded-3xl flex flex-col justify-center items-center text-center ">
         <div className="flex w-full h-full text-lg  p-5 justify-end items-end">
           

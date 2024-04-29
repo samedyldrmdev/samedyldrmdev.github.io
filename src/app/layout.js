@@ -27,6 +27,8 @@ import Projects from "./projects/page";
 import Skills from "./skills/page";
 import Contact from "./contact/page";
 import Header from "./header";
+// import { useRouter } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation';
 
 // Linefont, wavefont, Moirai One(başlık),
 
@@ -41,7 +43,6 @@ const sections = [
   { name: "Home", id: "/" },
   { name: "About", id: "about" },
   { name: "Skills", id: "skills" },
-
   { name: "Projects", id: "projects" },
   { name: "Certificates & Courses", id: "courses" },
   { name: "Contact", id: "contact" },
@@ -51,18 +52,22 @@ export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
   const [metadata, setMetadata] = useState({
     title: "Samed YILDIRIM",
-    description: "Samed YILDIRIM - Portfolio Website",
+    description: "Learn more about Samed YILDIRIM on his portfolio website.",
   });
 
   useEffect(() => {
     setLoading(false);
   }, [2000]);
 
+  const pathname = usePathname(); // Yeni hook'u kullanarak pathname'i alın
+  const isHomePage = pathname === "/"; // Anasayfada mıyız?
+
   return (
     <html lang="en">
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        
         <link rel="icon" type="image/png" href="/images/sylogodark.png" />
         {/* Diğer meta etiketleri */}
       </head>
@@ -79,27 +84,29 @@ export default function RootLayout({ children }) {
           </div>
         ) : (
           //
-          <div className="">
+          <div>
             <div>
-              <Navbar sections={sections} />
-              <div className="flex justify-center items-center bg-background-light">
-                {children}
-              </div>
-
-              <Header title="About" />
-              <About />
-              <Header title="Skills" />
-              <Skills />
-              <Header title="Projects" />
-              <Projects />
-              <Header title="Courses" />
-              <Courses />
-              <Header title="Contact" />
-              <Contact />
-              <Social/>
-
-              <Footer />
+              {isHomePage && (<Navbar sections={sections}/>)}
             </div>
+            <div className="flex justify-center items-center bg-background-light">
+              {children}
+            </div>
+            {isHomePage && (
+              <>
+                <Header title="About" />
+                <About />
+                <Header title="Skills" />
+                <Skills />
+                <Header title="Projects" />
+                <Projects />
+                <Header title="Courses" />
+                <Courses />
+                <Header title="Contact" />
+                <Contact />
+                <Social />
+                <Footer />
+              </>
+            )}
           </div>
         )}
       </body>
