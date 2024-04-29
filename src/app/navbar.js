@@ -179,7 +179,7 @@ export default function Navbar({ sections }) {
         </div>
       </nav>
       <div
-        className={`${navbarFont.className} mix-blend-difference`}
+        className={`${navbarFont.className} mix-blend-difference bg-black `}
       >
         <HeaderTitle name={activeSectionName} />
       </div>
