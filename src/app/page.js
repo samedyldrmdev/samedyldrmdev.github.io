@@ -10,7 +10,7 @@ export default function Home() {
       <Header title="/" />
       <div className="flex w-full justify-center items-center h-screen">
         <div className="grid grid-cols-1 p-12 md:grid-cols-2 lg:grid-cols-2 text-center ">
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center items-center">
             <h1 className="lg:text-7xl md:text-5xl sm:text-2xl font-semibold text-text-dark">
               Hi, I'm Samed!
             </h1>
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
           <div className="w-full h-1/2 bg-[#252525] absolute bottom-0 left-0 -z-40 "></div>
         </div>
-        <div className="absolute bottom-3 right-1/2">
+        <div className="">
           <div className="scroll-down bg-white"></div>
         </div>
       </div>
