@@ -4,17 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 import { Cagliostro, Englebert, Girassol, Text_Me_One } from "next/font/google";
-
 import {
-  faTwitter,
-  faLinkedin,
+  faXTwitter,
+  faLinkedinIn,
   faBehance,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useState } from "react";
 import HeaderTitle from "./headerTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 
 const navbarFont = Englebert({ subsets: ["latin"], weight: ["400"] });
 
@@ -109,7 +108,22 @@ export default function Navbar({ sections }) {
                 </ul>
               );
             })}
+            <div className="absolute bottom-12 gap-8 flex ">
+        <Link href={"https://twitter.com/sametyylldrm"}>
+          <FontAwesomeIcon className="size-5 hover:translate-y-[-3px]" icon={faXTwitter} />
+        </Link>
+        <Link href={"https://www.linkedin.com/in/samedyldrm/"}>
+          <FontAwesomeIcon className="size-5 hover:translate-y-[-3px]" icon={faLinkedinIn} />
+        </Link>
+        <Link href={"https://www.behance.net/samedyldrmm"}>
+          <FontAwesomeIcon className="size-5 hover:translate-y-[-3px]" icon={faBehance} />
+        </Link>
+        <Link href={"https://github.com/samedyldrmdev"}>
+          <FontAwesomeIcon className="size-5 hover:translate-y-[-3px]" icon={faGithub} />
+        </Link>
+      </div>
           </div>
+          
       </div>
       <nav
         className={`${navbarFont.className} fixed w-full top-0 py-4 left-0 text-white z-50 bg-background-dark shadow-md shadow-background-less-dark`}
@@ -160,7 +174,7 @@ export default function Navbar({ sections }) {
             }}
             className="flex lg:hidden cursor-pointer"
           >
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={navbarShow ? faBarsStaggered : faBars} />
           </div>
         </div>
       </nav>
