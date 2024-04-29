@@ -83,7 +83,7 @@ export default function Navbar({ sections }) {
   return (
     <div>
       <div
-        className={navbarShow ? "fixed h-full w-full bg-black z-40" : "hidden"}
+        className={navbarShow ? "fixed h-full w-full bg-background-dark z-40" : "hidden"}
       >
         <div className="h-full w-full flex flex-col justify-center items-center z-50 text-white">
             {sections.map((section) => {
