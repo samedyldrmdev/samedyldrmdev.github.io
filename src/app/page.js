@@ -10,7 +10,7 @@ export default function Home() {
       <Header title="/" />
       <div className="flex w-full justify-center items-center h-screen">
         <div className="grid grid-cols-1 p-12 md:grid-cols-2 lg:grid-cols-2 text-center ">
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center ">
             <h1 className="text-4xl lg:text-7xl font-semibold text-text-dark">
               Hi, I'm Samed!
             </h1>
@@ -20,7 +20,7 @@ export default function Home() {
               I'm here to share my passion for design and creative energy!
             </p>
             <Image
-              className="w-48"
+              className="w-48 "
               // invert
               src={"/images/imza.png"}
               height={1920}
@@ -29,16 +29,16 @@ export default function Home() {
           </div>
           <div>
             <Image
-              className="bottom-0 w-96 rounded-full pl-12 pt-10 grayscale m-8 md:m-0 lg:m-0"
+              className="bottom-0 w-96 rounded-full pl-12 pt-10 grayscale "
               src={"/images/pp.jpg"}
               height={1024}
               width={1024}
             />
           </div>
           <div className="w-full h-1/2 bg-[#252525] absolute bottom-0 left-0 -z-40 "></div>
-        </div>
-        <div className="">
-          <div className="scroll-down bg-white"></div>
+          <div className="p-8">
+            <div className="scroll-down bg-white"></div>
+          </div>
         </div>
       </div>
     </div>
