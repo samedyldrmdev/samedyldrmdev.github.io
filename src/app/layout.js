@@ -28,7 +28,7 @@ import Skills from "./skills/page";
 import Contact from "./contact/page";
 import Header from "./header";
 // import { useRouter } from 'next/navigation'
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from "next/navigation";
 
 // Linefont, wavefont, Moirai One(başlık),
 
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        
+
         <link rel="icon" type="image/png" href="/images/sylogodark.png" />
         {/* Diğer meta etiketleri */}
       </head>
@@ -85,9 +85,7 @@ export default function RootLayout({ children }) {
         ) : (
           //
           <div>
-            <div>
-              {isHomePage && (<Navbar sections={sections}/>)}
-            </div>
+            <div>{isHomePage && <Navbar sections={sections} />}</div>
             <div className="flex justify-center items-center bg-background-light">
               {children}
             </div>
@@ -103,10 +101,11 @@ export default function RootLayout({ children }) {
                 <Courses />
                 <Header title="Contact" />
                 <Contact />
-                <Social />
                 <Footer />
               </>
             )}
+            <Social />
+            
           </div>
         )}
       </body>
