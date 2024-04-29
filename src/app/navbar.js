@@ -183,7 +183,7 @@ export default function Navbar({ sections }) {
             onClick={() => {
               showNavbar();
             }}
-            className="flex lg:hidden cursor-pointer"
+            className="flex lg:hidden cursor-pointer text-2xl"
           >
             <FontAwesomeIcon icon={navbarShow ? faBarsStaggered : faBars} />
           </div>
