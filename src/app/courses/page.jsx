@@ -103,12 +103,12 @@ export default function Courses() {
   return (
     <div className="min-h-screen flex justify-center flex-col mt-4 bg-background-light">
       {Object.keys(coursesByOrganization).map((org,orgIndex) => (
-        <div className="flex justify-start items-center flex-col">
-          <div className="bg-blue-500  justify-start  w-1/2 rounded-xl m-1 font-bold text-lg p-3 text-white">
+        <div className="flex justify-start items-center flex-col px-12 md:px-20 lg:px-40">
+          <div className="bg-blue-500  justify-start w-full rounded-xl font-bold text-lg p-3 text-white">
             {org}
           </div>
           {coursesByOrganization[org].map((course, courseIndex) => (
-            <div className="bg-dark-iki hover:bg-[#3b3b3b] hover:shadow-md hover:shadow-black text-white w-1/2 rounded-xl cursor-pointer m-1">
+            <div className="bg-dark-iki hover:bg-[#3b3b3b] hover:shadow-md hover:shadow-black text-white w-full rounded-xl cursor-pointer m-1">
               <h2
                 onClick={() => {
                   detailsOn(course.id);
