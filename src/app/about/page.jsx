@@ -35,6 +35,9 @@ export default function About() {
           exciting, and I continue to learn and explore more with each passing
           day. <br /> <span className="font-bold text-text-light">I invite you to join me on this journey!</span>
         </p>
+        <p>Languages:</p>
+        <p>Languages:</p>
+        <p>Languages:</p>
         </div>
       </div>
       {/* <HeaderTitle title="About" /> */}
