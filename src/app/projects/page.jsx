@@ -135,12 +135,7 @@ export default function Projects() {
           >
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </Link>
-          <Link
-            href={active.github}
-            className="px-3 hover:text-white cursor-pointer"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </Link>
+          
         </div>
 
         <div>

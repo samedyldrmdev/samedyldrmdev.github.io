@@ -34,10 +34,6 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 const bodyFont = Cagliostro({ subsets: ["latin"], weight: ["400"] });
 
-// export const metadata = {
-//   title: "Samed YILDIRIM",
-//   description: "Samed YILDIRIM - Portfolio Website",
-// };
 
 const sections = [
   { name: "Home", id: "/" },
