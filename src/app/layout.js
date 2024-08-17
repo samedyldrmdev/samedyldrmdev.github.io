@@ -89,7 +89,7 @@ export default function RootLayout({ children }) {
               <>
                 <Header title="About" />
                 <About />
-                <Header title="Skills" />
+                <Header title="Skills" /> 
                 <Skills />
                 <Header title="Projects" />
                 <Projects />
