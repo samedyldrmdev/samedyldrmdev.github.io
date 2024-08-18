@@ -50,7 +50,7 @@ export default function Footer() {
 
         <div className="flex flex-col justify-center items-center gap-2">
           <Image
-            className="w-24 "
+            className="w-40"
             src={"/images/lyntechlogo.png"}
             width={1920}
             height={1080}
