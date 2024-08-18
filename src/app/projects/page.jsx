@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 
 export default function Projects() {
   const links = [
@@ -127,20 +127,30 @@ export default function Projects() {
 
       {/* show */}
       <div className="show col-span-2 justify-center items-center">
-        <div className="flex flex-row justify-between">
-          <h1 className="font-bold text-text-light p-5">{active.name}</h1>
+        <div className="flex flex-row py-5 justify-between">
+          <h1 className="font-bold text-text-light px-5">{active.name}</h1>
+          <div className="px-2 flex items-end gap-4">
           <Link
             href={active.url}
-            className="px-3 hover:text-white cursor-pointer"
+            className=" hover:text-white cursor-pointer"
           >
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            <FontAwesomeIcon className="text-white hover:text-text-light" icon={faArrowUpRightFromSquare} />
           </Link>
+          {/* <Link
+            href={active.url}
+            className=" hover:text-white cursor-pointer"
+          >
+            <FontAwesomeIcon className="text-white hover:text-text-light" icon={faGithub} />
+          </Link> */}
+          </div>
+          
           
         </div>
+        
 
         <div>
           <Image
-            className="rounded-2xl shadow-md shadow-dark-iki"
+            className="rounded-2xl shadow-sm shadow-white "
             src={active.image}
             height={1920}
             width={1080}

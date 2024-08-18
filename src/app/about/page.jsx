@@ -49,7 +49,7 @@ export default function About() {
             <div className="flex flex-col gap-8">
               <div className="h-6  rounded-full  bg-white shadow-sm shadow-blue-500 relative ">
                 <p className=" right-0 px-4 absolute z-10 text-black  text-l">
-                  German - B1
+                  German - B1 <span className="italic">(Continuing to learn)</span>
                 </p>
                 <div className="h-6 w-[50%] rounded-full  bg-text-light shadow-sm shadow-blue-500  "></div>
               </div>
